@@ -1,217 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #009A8D;
+  --color-bg-primary: #0E0E0E;
+  --color-bg-card: #1A1A1A;
+  --color-bg-card-hover: rgba(42, 42, 42, 0.8);
+  --color-text-primary: #ffffff;
+  --color-text-soft: #a0a0a0;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
 
 :root {
-  /* ── Orange Accent ── */
-  --accent: #FF6B35;
-  --accent-hover: #E8551F;
-  --accent-light: rgba(255, 107, 53, 0.12);
-  --accent-glow: rgba(255, 107, 53, 0.35);
-
-  /* ── Dark Theme (Default) ── */
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #111111;
-  --bg-card: #161616;
-  --bg-card-hover: #1C1C1C;
-  --bg-elevated: #1E1E1E;
-  --bg-glass: rgba(22, 22, 22, 0.85);
-
-  --text-primary: #FFFFFF;
-  --text-secondary: #A0A0A0;
-  --text-muted: #666666;
-
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --border-accent: rgba(255, 107, 53, 0.3);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-  --shadow-accent: 0 8px 30px rgba(255, 107, 53, 0.2);
-
-  /* ── Fonts ── */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* ── Transitions ── */
-  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  /* ── Radius ── */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-full: 999px;
-}
-
-/* ── Light Theme ── */
-[data-theme='light'] {
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8F8F8;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F5F5F5;
-  --bg-elevated: #F0F0F0;
-  --bg-glass: rgba(255, 255, 255, 0.9);
-
-  --text-primary: #0A0A0A;
-  --text-secondary: #555555;
-  --text-muted: #999999;
-
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.15);
-  --border-accent: rgba(255, 107, 53, 0.3);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --shadow-accent: 0 8px 30px rgba(255, 107, 53, 0.15);
-}
-
-/* ── Reset ── */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-main);
-  transition: background-color 0.5s ease, color 0.5s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.15;
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #111111; /* Clean dark solid background */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition-fast);
+/* Solid Dark Cards (replacing Glassmorphism) */
+.glass-card {
+  background: #1C1C1E; /* Solid dark grey slightly lighter than background */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Very subtle white border */
+  border-radius: 24px; /* Increased border radius for sleek card look */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-family: inherit;
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15); /* Slightly brighter white border on hover, NO neon */
+  z-index: 10;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ── Scrollbar ── */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--color-bg-primary);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
+  background: var(--color-brand);
 }
 
-/* ── Utility Classes ── */
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* Global inputs */
+input, textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  box-shadow: 0 0 10px rgba(0, 154, 141, 0.2);
 }
 
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent);
-  margin-bottom: 16px;
+/* Hide scrollbar when desired */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-
-/* ── Button Styles ── */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--accent);
-  color: #FFFFFF;
-  padding: 14px 32px;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  transition: var(--transition);
-  box-shadow: var(--shadow-accent);
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.35);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: transparent;
-  color: var(--text-primary);
-  padding: 14px 32px;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 14px;
-  border: 2px solid var(--border-color);
-  transition: var(--transition);
-}
-
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-3px);
-}
-
-/* ── Selection ── */
-::selection {
-  background: var(--accent);
-  color: #ffffff;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
