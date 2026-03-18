@@ -49,7 +49,7 @@ const ResumeSection = () => {
               Preview
             </motion.button>
             <motion.a
-              href="/resume.pdf"
+              href="/RetikYadav-12322762.pdf"
               download
               className="px-4 py-2 bg-white text-black font-medium rounded-full flex items-center gap-2 hover:bg-gray-200 transition-colors cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -95,7 +95,7 @@ const ResumeSection = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <a
-                    href="/resume.pdf"
+                    href="/RetikYadav-12322762.pdf"
                     download
                     className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition-colors shadow-sm cursor-pointer"
                   >
@@ -114,7 +114,7 @@ const ResumeSection = () => {
               {/* Modal Body / iFrame */}
               <div className="flex-1 w-full bg-white relative">
                 <iframe 
-                  src="/resume.pdf" 
+                  src="/RetikYadav-12322762.pdf" 
                   className="w-full h-full border-none"
                   title="Resume Preview"
                 />
