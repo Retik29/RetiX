@@ -2,17 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const GridItem = ({ className, children, onClick }) => {
-  return (
+    return (
     <motion.div
-      layout
-      className={`glass-card relative flex flex-col p-6 cursor-pointer ${className} group/item`}
-      whileHover={{ scale: 1.02, zIndex: 50 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className={`snap-target relative flex flex-col p-6 cursor-pointer border-r border-b border-[var(--color-border)] bg-[var(--color-bg-base)] transition-colors duration-500 overflow-hidden ${className} group/item`}
       onClick={onClick}
     >
       {children}
-      {/* Subtle shine effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[rgba(255,255,255,0.05)] to-transparent opacity-0 group-hover/item:opacity-100 pointer-events-none transition-opacity duration-300" />
     </motion.div>
   );
 };

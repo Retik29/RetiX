@@ -1,8 +1,20 @@
 {
   "name": "retix",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "<div align=\"center\">",
+  "homepage": "https://github.com/BhriguKumarDeka/RetiksPortfolio#readme",
+  "bugs": {
+    "url": "https://github.com/BhriguKumarDeka/RetiksPortfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BhriguKumarDeka/RetiksPortfolio.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +22,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^12.34.3",
     "lucide-react": "^0.575.0",
+    "motion": "^12.38.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

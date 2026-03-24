@@ -1,130 +1,58 @@
-import React from 'react';
-import { Layout, Code, Smartphone } from 'lucide-react';
+// src/data/portfolioData.js
 
-export const services = [
-    {
-        icon: Layout, 
-        title: 'UI/UX Design',
-        desc: 'Crafting intuitive, beautiful interfaces with modern design principles and user-centered methodologies.'
-    },
-    {
-        icon: Code,
-        title: 'Web Development',
-        desc: 'Building performant, responsive web applications using cutting-edge technologies and frameworks.'
-    },
-    {
-        icon: Smartphone,
-        title: 'Landing Pages',
-        desc: 'High-converting landing pages that capture attention and turn visitors into customers.'
-    }
+export const personalData = {
+  name: "Retik Kumar Yadav",
+  firstName: "Retik",
+  lastName: "Yadav",
+  role: "Full Stack Developer",
+  tagline: "Crafting scalable, high-performance web applications with React, Node.js, and modern cloud ecosystems.",
+  about: "I'm a Full Stack Developer passionate about building robust, user-centric applications. With a strong foundation in modern JavaScript ecosystems and an eye for polished UI/UX, I bridge the gap between complex engineering and elegant design.",
+  email: "retiknyadav614@gmail.com",
+  phone: "+91 9883628859",
+  github: "https://github.com/Retik29",
+  linkedin: "https://linkedin.com/in/retik"
+};
+
+export const educationData = [
+  { degree: "B.Tech Computer Science & Engineering", school: "Lovely Professional University", location: "Punjab", score: "CGPA: 7.95", year: "Aug '23 – Present" },
+  { degree: "Intermediate (PCM)", school: "Bidhan Chandra Institution", location: "Durgapur, WB", score: "77%", year: "Mar '21 – May '23" }
 ];
 
-export const experiences = [
-    {
-        role: 'Full Stack Developer',
-        company: 'Freelance',
-        date: 'Jan 2024 — Present',
-        desc: 'Building modern web applications and digital experiences for diverse clients worldwide.'
-    },
-    {
-        role: 'Frontend Developer',
-        company: 'Open Source',
-        date: 'Sep 2023 — Present',
-        desc: 'Contributing to open-source projects, crafting reusable components and design systems.'
-    },
-    {
-        role: 'UI/UX Designer',
-        company: 'Personal Projects',
-        date: 'Jun 2023 — Present',
-        desc: 'Designing intuitive user interfaces and creating comprehensive design systems.'
-    },
-    {
-        role: 'Web Developer',
-        company: 'Academic Projects',
-        date: 'Jan 2023 — Dec 2023',
-        desc: 'Developed full-stack applications as part of university coursework and hackathons.'
-    }
+export const certificatesData = [
+  { course: "Bits and Bytes of Computer Networking", platform: "Coursera", date: "2024", pdf: "/BitsandBytes.pdf" },
+  { course: "Cloud Computing", platform: "NPTEL", date: "2024", pdf: "/CloudComputing.pdf" },
+  { course: "Cloud Computing and DevOps", platform: "Google Cloud", date: "2024", pdf: "/DevOps.pdf" }
 ];
 
-export const projects = [
-    {
-        tag: 'Web App',
-        title: 'Food Delivery Solution',
-        desc: 'Complete food ordering platform with real-time tracking and payment integration.',
-        img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop',
-        filter: 'Web App'
-    },
-    {
-        tag: 'Dashboard',
-        title: 'Analytics Dashboard',
-        desc: 'Data visualization dashboard with interactive charts and real-time metrics.',
-        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-        filter: 'Dashboard'
-    },
-    {
-        tag: 'Landing Page',
-        title: 'SaaS Product Page',
-        desc: 'High-converting landing page for a productivity SaaS platform.',
-        img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
-        filter: 'Landing Page'
-    },
-    {
-        tag: 'Web App',
-        title: 'Mental Health Platform',
-        desc: 'Wellness app with counselling, exercises, and community features.',
-        img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
-        filter: 'Web App'
-    },
-    {
-        tag: 'Landing Page',
-        title: 'Portfolio Template',
-        desc: 'Modern portfolio template with dark/light themes and animations.',
-        img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800&auto=format&fit=crop',
-        filter: 'Landing Page'
-    },
-    {
-        tag: 'Dashboard',
-        title: 'E-Commerce Admin',
-        desc: 'Comprehensive admin panel for managing products, orders, and analytics.',
-        img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
-        filter: 'Dashboard'
-    }
+export const resumeData = {
+  pdf: "/RetikYadav-12322762.pdf",
+  size: "150KB"
+};
+
+export const skillsData = [
+  { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+  { name: 'JavaScript', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+  { name: 'Node.js', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+  { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+  { name: 'MongoDB', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
+  { name: 'Git', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+  { name: 'Java', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+  { name: 'Express', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
+  { name: 'C++', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+  { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' }
 ];
 
-export const testimonials = [
-    {
-        text: 'Retik delivered an outstanding website that exceeded all our expectations. His attention to detail and creative approach made the project a huge success.',
-        name: 'Sarah Johnson',
-        title: 'CEO, TechStart',
-        initials: 'SJ'
-    },
-    {
-        text: 'Working with Retik was a fantastic experience. He understood our vision perfectly and translated it into a beautiful, functional web application.',
-        name: 'Mike Chen',
-        title: 'Product Manager, DesignCo',
-        initials: 'MC'
-    }
+export const projectsData = [
+  { id: 1, title: 'Lumina', desc: 'Mental health platform with role-based scheduling and AI-powered chatbot support.',
+    image: '/lumina.png',
+    demo: 'https://lumina-peace.vercel.app/', github: 'https://github.com/Retik29',
+    tech: ['React', 'Node.js', 'MongoDB', 'JWT'] },
+  { id: 2, title: 'InsightDrive', desc: 'Fleet mapping feedback & analytics enabling live telemetry and real-time dashboard.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    demo: 'https://github.com/Retik29/InsightDrive', github: 'https://github.com/Retik29/InsightDrive',
+    tech: ['React', 'Express', 'Socket.IO'] },
+  { id: 3, title: 'FixEasy', desc: 'Technician-finder platform for seamlessly locating verified service providers.',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800',
+    demo: 'https://github.com/Retik29/FixEasy', github: 'https://github.com/Retik29/FixEasy',
+    tech: ['Node.js', 'Express', 'JWT'] }
 ];
-
-export const blogPosts = [
-    {
-        date: 'Feb 15, 2026',
-        title: 'Design Increased Robust Reliability Software',
-        desc: 'A deep dive into creating resilient design systems that scale.',
-        img: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop'
-    },
-    {
-        date: 'Jan 28, 2026',
-        title: 'Repeat And Portfolio In Staffing Software',
-        desc: 'How to build a standout developer portfolio that gets noticed.',
-        img: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=800&auto=format&fit=crop'
-    },
-    {
-        date: 'Jan 10, 2026',
-        title: 'Media & Insights: Unleashing the Power of Data',
-        desc: 'Leveraging analytics for better design decisions.',
-        img: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop'
-    }
-];
-
-export const filters = ['All', 'Web App', 'Landing Page', 'Dashboard'];
