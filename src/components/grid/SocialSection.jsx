@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GridItem from './GridItem';
-import { Github, Linkedin, Mail, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
 import { personalData } from '../../data/portfolioData';
 
 const SocialLink = ({ href, icon: Icon }) => {
@@ -31,7 +31,7 @@ const SocialSection = () => {
         <SocialLink href={personalData.github} icon={Github} />
         <SocialLink href={personalData.linkedin} icon={Linkedin} />
         <SocialLink href={`mailto:${personalData.email}`} icon={Mail} />
-        <SocialLink href="https://codolio.com/profile/diedilemma" icon={Globe} />
+        <SocialLink href="https://codolio.com/profile/diedilemma" icon={Code2} />
       </div>
     </GridItem>
   );

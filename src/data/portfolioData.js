@@ -14,8 +14,9 @@ export const personalData = {
 };
 
 export const educationData = [
-  { degree: "B.Tech Computer Science & Engineering", school: "Lovely Professional University", location: "Punjab", score: "CGPA: 8.03", year: "Aug '23 – Present" },
-  { degree: "Intermediate (PCM)", school: "Bidhan Chandra Institution", location: "Durgapur, WB", score: "77%", year: "Mar '21 – May '23" }
+  { degree: "B.Tech Computer Science & Engineering", school: "Lovely Professional University", location: "Phagwara, Punjab", score: "CGPA: 8.03", year: "Aug '23 – Present" },
+  { degree: "Intermediate (PCM)", school: "Bidhan Chandra Institution", location: "Durgapur, WB", score: "77%", year: "Mar '21 – May '23" },
+  { degree: "Matriculation", school: "Assembly Of God Church School", location: "Durgapur, WB", score: "92%", year: "Mar '19 – May '20" }
 ];
 
 export const certificatesData = [
@@ -39,7 +40,13 @@ export const skillsData = [
   { name: 'Java', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
   { name: 'Express', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
   { name: 'C++', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
-  { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' }
+  { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg' },
+  { name: 'Postman', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
+  { name: 'AWS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+  { name: 'Jenkins', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg' },
+  { name: 'Maven', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg' },
+  { name: 'Docker', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+  { name: 'Kubernetes', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg' }
 ];
 
 export const projectsData = [
@@ -48,11 +55,11 @@ export const projectsData = [
     demo: 'https://lumina-peace.vercel.app/', github: 'https://github.com/Retik29',
     tech: ['React', 'Node.js', 'MongoDB', 'JWT'] },
   { id: 2, title: 'InsightDrive', desc: 'Fleet mapping feedback & analytics enabling live telemetry and real-time dashboard.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    image: '/InsightDrive.png',
     demo: 'https://github.com/Retik29/InsightDrive', github: 'https://github.com/Retik29/InsightDrive',
     tech: ['React', 'Express', 'Socket.IO'] },
   { id: 3, title: 'FixEasy', desc: 'Technician-finder platform for seamlessly locating verified service providers.',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800',
+    image: '/FixEasy.png',
     demo: 'https://github.com/Retik29/FixEasy', github: 'https://github.com/Retik29/FixEasy',
     tech: ['Node.js', 'Express', 'JWT'] }
 ];

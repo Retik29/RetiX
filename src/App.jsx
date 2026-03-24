@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FileDown } from 'lucide-react';
-import './App.css';
-import SnapCursor from './components/SnapCursor';
-
 import HeroSection from './components/grid/HeroSection';
 import SocialSection from './components/grid/SocialSection';
 import AboutSection from './components/grid/AboutSection';
@@ -34,9 +31,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-white relative selection:bg-white/20 selection:text-white cursor-none">
-      <SnapCursor />
-      
+    <div className="min-h-screen text-white relative selection:bg-white/20 selection:text-white">
       {easterEgg && (
         <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 backdrop-blur-md">
           <motion.h1 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GridItem from './GridItem';
 import { X, ExternalLink } from 'lucide-react';
@@ -7,10 +7,18 @@ import { certificatesData as CERTIFICATES } from '../../data/portfolioData';
 const CertificatesSection = () => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [currentCertIndex, setCurrentCertIndex] = useState(0);
 
+  useEffect(() => {
+    if (isPreviewOpen) return;
+    const timer = setInterval(() => {
+      setCurrentCertIndex(prev => (prev + 1) % CERTIFICATES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isPreviewOpen]);
+
+  const activeCertDisplay = CERTIFICATES[currentCertIndex];
   const activeCert = CERTIFICATES[activeIndex];
-  const latestCert = CERTIFICATES[0];
-  const count = CERTIFICATES.length;
 
   return (
     <>
@@ -19,13 +27,24 @@ const CertificatesSection = () => {
           <h2 className="text-[10px] uppercase font-mono tracking-[0.2em] text-[#666]">CERTIFICATES</h2>
         </div>
 
-        <div className="mt-auto relative z-10 w-full p-4 border border-[var(--color-border)] rounded shadow-sm bg-[var(--color-bg-base)] flex flex-col justify-between group hover:border-white/20 transition-colors cursor-pointer"
-             onClick={(e) => { e.stopPropagation(); setIsPreviewOpen(true); }}>
-          <h4 className="text-[9px] uppercase font-mono tracking-widest text-[#666] mb-2">{latestCert.platform}</h4>
-          <div className="flex justify-between items-end">
-            <h3 className="text-sm font-medium text-white">{latestCert.course}</h3>
-            <span className="text-[10px] font-mono text-[#666] group-hover:text-white transition-colors">+{count - 1}</span>
-          </div>
+        <div className="mt-4 relative z-10 w-full flex-1" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={currentCertIndex}
+              initial={{ rotateY: 100, opacity: 0, originX: 0, originY: 1, scale: 0.95, skewY: 5, z: -50 }}
+              animate={{ rotateY: 0, opacity: 1, originX: 0, originY: 0, scale: 1, skewY: 0, z: 0 }}
+              exit={{ rotateY: -110, opacity: 0, originX: 0, originY: 0, scale: 0.95, skewY: -5, z: 50 }}
+              transition={{ type: "tween", duration: 1.5, ease: [0.25, 0.8, 0.25, 1] }}
+              style={{ backfaceVisibility: 'hidden' }}
+              className="absolute inset-0 p-5 border border-[var(--color-border)] rounded-sm shadow-[2px_4px_16px_rgba(0,0,0,0.5)] bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] flex flex-col justify-end group hover:border-[#0A84FF]/50 transition-colors cursor-pointer before:absolute before:inset-y-0 before:left-0 before:w-4 before:bg-gradient-to-r before:from-black/40 before:to-transparent"
+              onClick={(e) => { e.stopPropagation(); setActiveIndex(currentCertIndex); setIsPreviewOpen(true); }}
+            >
+              <h4 className="text-[9px] uppercase font-mono tracking-widest text-[#0A84FF] mb-2 drop-shadow-md">{activeCertDisplay.platform}</h4>
+              <div className="flex justify-between items-end relative z-10">
+                <h3 className="text-sm font-medium text-gray-200 leading-tight drop-shadow-md">{activeCertDisplay.course}</h3>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </GridItem>
 
@@ -87,7 +106,7 @@ const CertificatesSection = () => {
                 
                 <div className="flex-1 relative bg-[#0a0a0a]">
                   <iframe 
-                    src={activeCert.pdf} 
+                    src={`${activeCert.pdf}#view=Fit`} 
                     className="w-full h-full border-none"
                     title="Certificate Preview"
                   />

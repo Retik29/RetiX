@@ -1,45 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GridItem from './GridItem';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { projectsData as PROJECTS } from '../../data/portfolioData';
 
 const ProjectsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const [direction, setDirection] = useState(1);
 
-  const handleNext = (e) => {
-    if (e) e.stopPropagation();
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % PROJECTS.length);
-  };
-
-  const handlePrev = (e) => {
-    if (e) e.stopPropagation();
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + PROJECTS.length) % PROJECTS.length);
-  };
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    const diff = touchStartX.current - touchEndX.current;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        handleNext();
-      } else {
-        handlePrev();
-      }
-    }
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % PROJECTS.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   const slideVariants = {
     enter: (direction) => ({ x: direction > 0 ? 60 : -60, opacity: 0 }),
@@ -51,12 +25,7 @@ const ProjectsSection = () => {
 
   return (
     <GridItem className="col-span-1 sm:col-span-2 md:col-span-2 md:row-span-2 relative overflow-hidden p-0 min-h-[300px] md:min-h-0">
-      <div 
-        className="p-6 relative z-10 flex flex-col justify-between h-full"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="p-6 relative z-10 flex flex-col justify-between h-full">
         <div className="mt-auto relative z-20">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -127,14 +96,6 @@ const ProjectsSection = () => {
          </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-y-0 left-0 right-0 z-50 flex items-center justify-between px-4 pointer-events-none opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
-        <button onClick={handlePrev} className="p-3 bg-black/50 border border-white/10 rounded-full hover:bg-white/10 hover:scale-110 transition-all cursor-pointer text-white pointer-events-auto backdrop-blur-md">
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button onClick={handleNext} className="p-3 bg-black/50 border border-white/10 rounded-full hover:bg-white/10 hover:scale-110 transition-all cursor-pointer text-white pointer-events-auto backdrop-blur-md">
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
     </GridItem>
   );
 };
