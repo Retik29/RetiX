@@ -10,7 +10,7 @@ export const personalData = {
   email: "retiknyadav614@gmail.com",
   phone: "+91 9883628859",
   github: "https://github.com/Retik29",
-  linkedin: "https://linkedin.com/in/retik"
+  linkedin: "https://www.linkedin.com/in/retik-yadav"
 };
 
 export const educationData = [
