@@ -14,7 +14,7 @@ export const personalData = {
 };
 
 export const educationData = [
-  { degree: "B.Tech Computer Science & Engineering", school: "Lovely Professional University", location: "Punjab", score: "CGPA: 7.95", year: "Aug '23 – Present" },
+  { degree: "B.Tech Computer Science & Engineering", school: "Lovely Professional University", location: "Punjab", score: "CGPA: 8.03", year: "Aug '23 – Present" },
   { degree: "Intermediate (PCM)", school: "Bidhan Chandra Institution", location: "Durgapur, WB", score: "77%", year: "Mar '21 – May '23" }
 ];
 
